@@ -46,6 +46,7 @@ class TodoViewTestCase(TestCase):
         self.assertEqual(len(response.context['tasks']), 0)
 
     def test_index_post(self):
+        client = Client()
         data = {'title': 'Test Task', 'due_at': '2024-06-30 23:59:59'}
         response = client.post('/', data)
 
